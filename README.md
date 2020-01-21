@@ -38,7 +38,7 @@ lxc exec master -- kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-prefli
 ```
 - Retrieve kubectl config
 ```
-mkdir -p ~/.kube && cp ~/.kube/config ~/.kube/config.bak && lxc file pull master/etc/kubernetes/admin.conf ~/.kube/config
+mkdir -p ~/.kube && [ -f  ~/.kube/config ] && cp ~/.kube/config ~/.kube/config.bak;lxc file pull master/etc/kubernetes/admin.conf ~/.kube/config
 ```
 - Deploy [flannel network add-on](https://github.com/coreos/flannel)
 ```
