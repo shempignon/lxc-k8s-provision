@@ -30,7 +30,7 @@ lxc launch images:ubuntu/18.04 master
 ```
 - Setup a master node with the [master script](master.sh)
 ```
-lxc file push master.sh master && lxc exec master /master.sh
+lxc file push master.sh master/ && lxc exec master /master.sh
 ```
 - Install kubeadm on the master node
 ```
@@ -48,7 +48,7 @@ lxc launch images:ubuntu/18.04 <worker-name>
 ```
 - Setup worker nodes with the [worker script](worker.sh)
 ```
-lxc file push master.sh <worker-name> && lxc exec <worker-name> /worker.sh
+lxc file push worker.sh <worker-name>/ && lxc exec <worker-name> /worker.sh
 ```
 - Join the cluster with the worker
 ```
