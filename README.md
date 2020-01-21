@@ -40,6 +40,10 @@ lxc exec master -- kubeadm init --pod-network-cidr=10.244.0.0/16 --ignore-prefli
 ```
 mkdir -p ~/.kube && cp ~/.kube/config ~/.kube/config.bak && lxc file pull master/etc/kubernetes/admin.conf ~/.kube/config
 ```
+- Deploy [flannel network add-on](https://github.com/coreos/flannel)
+```
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/2140ac876ef134e0ed5af15c65e414cf26827915/Documentation/kube-flannel.yml
+```
 
 For each worker node:
 - Create a container
